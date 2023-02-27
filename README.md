@@ -14,6 +14,11 @@ Above that layer is also a little Router from Express that passes request to the
 
 ### Data Access Layer: Working with our DB. To start with we will work with local JSON file.
 
+## Basic setup:
+
+src folder inside the project. ->
+mkdir controllers && mkdir services && mkdir database && mkdir routes. touch index.js (entry point for for API)
+
 ## Initiate all dependencies:
 
 in project folder:
@@ -29,4 +34,4 @@ inside package.json:
 under scripts, add:
 "dev": "nodemon src/index.js"
 
-Start project through: npm run dev
+### Start project through: npm run dev

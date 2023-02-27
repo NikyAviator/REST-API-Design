@@ -17,7 +17,7 @@ Above that layer is also a little Router from Express that passes request to the
 ## Basic setup:
 
 src folder inside the project. ->
-mkdir controllers && mkdir services && mkdir database && mkdir routes. touch index.js (entry point for for API)
+mkdir controllers && mkdir services && mkdir database && mkdir routes. touch index.js (entry point for the API)
 
 ## Initiate all dependencies:
 

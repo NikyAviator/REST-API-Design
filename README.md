@@ -19,6 +19,13 @@ Above that layer is also a little Router from Express that passes request to the
 src folder inside the project. ->
 mkdir controllers && mkdir services && mkdir database && mkdir routes. touch index.js (entry point for the API)
 
+## Versioning
+
+Inside src folder:
+Create different versions of routes:
+v1, v2, v3 etc...
+Inside these v${number} folders, put a route folder!
+
 ## Initiate all dependencies:
 
 in project folder:

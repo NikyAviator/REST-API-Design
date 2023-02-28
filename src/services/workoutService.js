@@ -21,8 +21,12 @@ const createNewWorkout = (newWorkout) => {
     createdAt: new Date().toLocaleString('en-US', { timeZone: 'UTC' }),
     updatedAt: new Date().toLocaleString('en-US', { timeZone: 'UTC' }),
   };
-  const createdWorkout = Workout.createdNewWorkout(workoutToInsert);
-  return createdWorkout;
+  try {
+    const createdWorkout = Workout.createdNewWorkout(workoutToInsert);
+    return createdWorkout;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const updateOneWorkout = (workoutId, changes) => {

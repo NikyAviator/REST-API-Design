@@ -26,6 +26,10 @@ Create different versions of routes:
 v1, v2, v3 etc...
 Inside these v${number} folders, put a route folder!
 
+---
+
+Additionally add workoutController.js, workoutService.js and workoutRoutes.js
+
 ## Initiate all dependencies:
 
 in project folder:

@@ -1,7 +1,7 @@
 // Service layer:
 // Good practise to name service methods the same as the controller methods!
 // Inside our service methods we'll be handling our business logic like transforming data structures and communicating with our Database Layer.
-
+const { v4: uuid } = require('uuid');
 const Workout = require('../database/Workout');
 
 const getAllWorkouts = () => {
@@ -13,8 +13,15 @@ const getOneWorkout = () => {
   return;
 };
 
-const createNewWorkout = () => {
-  return;
+const createNewWorkout = (newWorkout) => {
+  const workoutToInsert = {
+    ...newWorkout,
+    id: uuid(),
+    createdAt: new Date().toLocaleString('en-US', { timeZone: 'UTC' }),
+    updatedAt: new Date().toLocaleString('en-US', { timeZone: 'UTC' }),
+  };
+  const createdWorkout = Workout.createdNewWorkout(workoutToInsert);
+  return createdWorkout;
 };
 
 const updateOneWorkout = () => {

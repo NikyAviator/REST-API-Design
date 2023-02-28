@@ -15,22 +15,25 @@ const getOneWorkout = (req, res) => {
 // we can extract the body from the request object, do some validation, and pass it as an argument to our workout service.
 const createNewWorkout = (req, res) => {
   const { body } = req;
+
   if (
     !body.name ||
     !body.mode ||
-    !body.eqipment ||
+    !body.equipment ||
     !body.exercises ||
     !body.trainerTips
   ) {
     return;
   }
+
   const newWorkout = {
     name: body.name,
     mode: body.mode,
-    equipment: body.eqipment,
+    equipment: body.equipment,
     exercises: body.exercises,
     trainerTips: body.trainerTips,
   };
+
   const createdWorkout = workoutService.createNewWorkout(newWorkout);
 
   res.status(201).send({ status: 'OK', data: createdWorkout });

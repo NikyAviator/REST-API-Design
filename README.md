@@ -39,6 +39,8 @@ npm i -D nodemon
 
 npm i express
 
+npm i body-parser
+
 touch .gitignore and add node_modules/ inside it.
 
 inside package.json:

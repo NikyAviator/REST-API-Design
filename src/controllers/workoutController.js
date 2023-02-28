@@ -11,10 +11,29 @@ const getOneWorkout = (req, res) => {
   const workout = workoutService.getOneWorkout();
   res.send('Get an existing workout');
 };
-
+// Inside the method createNewWorkout in our workout controller,
+// we can extract the body from the request object, do some validation, and pass it as an argument to our workout service.
 const createNewWorkout = (req, res) => {
-  const createdWorkout = workoutService.createNewWorkout();
-  res.send('Create a new workout');
+  const { body } = req;
+  if (
+    !body.name ||
+    !body.mode ||
+    !body.eqipment ||
+    !body.exercises ||
+    !body.trainerTips
+  ) {
+    return;
+  }
+  const newWorkout = {
+    name: body.name,
+    mode: body.mode,
+    equipment: body.eqipment,
+    exercises: body.exercises,
+    trainerTips: body.trainerTips,
+  };
+  const createdWorkout = workoutService.createNewWorkout(newWorkout);
+
+  res.status(201).send({ status: 'OK', data: createdWorkout });
 };
 
 const updateOneWorkout = (req, res) => {
